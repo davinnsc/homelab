@@ -1,0 +1,6 @@
+# /etc/rancher/rke2/config.yaml on the server (control-plane + etcd)
+node-ip: 192.168.86.201          # baked into certs and etcd: pick it once, never change it
+tls-san:                         # extra names/IPs accepted by the API server certificate
+  - 192.168.86.201
+  - rke2-server-1
+write-kubeconfig-mode: "0644"    # lets a non-root user read /etc/rancher/rke2/rke2.yaml

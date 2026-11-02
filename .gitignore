@@ -1,0 +1,15 @@
+# Terraform
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+
+# Secrets and real values: never commit
+terraform.tfvars
+*.auto.tfvars
+generated/
+kubeconfig*
+*.pem
+*.key

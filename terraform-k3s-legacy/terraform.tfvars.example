@@ -1,0 +1,42 @@
+# Copy to terraform.tfvars and fill in. terraform.tfvars is git-ignored.
+
+# Proxmox
+proxmox_url          = "https://192.168.15.6:8006"
+proxmox_user         = "root@pam"
+proxmox_password     = "<your-proxmox-password>"
+proxmox_node         = "proxmox"
+proxmox_tls_insecure = true
+
+# Template & network
+template_vmid = 9000
+gateway       = "192.168.15.1"
+nameservers   = ["8.8.8.8", "8.8.4.4"]
+search_domain = "local"
+bridge        = "vmbr0"
+
+# SSH
+ssh_user             = "ubuntu"
+ssh_private_key_path = "~/.ssh/id_homelab"
+ssh_public_key_path  = "~/.ssh/id_homelab.pub"
+
+# K3s server
+server_vmid      = 200
+server_name      = "homelab-k3s-server-1"
+server_cores     = 2
+server_memory    = 4096
+server_disk_size = 30
+server_ip        = "192.168.15.201/24"
+server_storage   = "local-lvm"
+
+# K3s agents
+agent_count     = 2
+agent_vmids     = [300, 301]
+agent_names     = ["homelab-k3s-agent-1", "homelab-k3s-agent-2"]
+agent_cores     = 2
+agent_memory    = 4096
+agent_disk_size = 40
+agent_ips       = ["192.168.15.211/24", "192.168.15.212/24"]
+agent_storage   = "local-lvm"
+
+# Empty = latest stable
+k3s_version = ""
